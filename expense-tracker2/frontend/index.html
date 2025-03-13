@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <a href="add-expense.html"><button>Add Expense</button></a>
+        <label for="filter-category">Filter by Category:</label>
+        <select id="filter-category">
+            <option value="">All</option>
+            <option value="food">Food</option>
+            <option value="rent">Rent</option>
+            <option value="transport">Transport</option>
+            <option value="other">Other</option>
+        </select>
+        <table id="expenses-table">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
