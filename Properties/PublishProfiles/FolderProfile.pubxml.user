@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\aneea\source\repos\ClassroomApi\ClassroomAPI\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-01-08T11:49:36.6326442Z||;True|2025-01-08T17:06:10.7628534+05:30||;True|2025-01-08T17:00:24.3625947+05:30||;True|2025-01-08T16:57:00.9317636+05:30||;True|2025-01-08T16:49:00.1720066+05:30||;True|2025-01-08T14:27:46.0246412+05:30||;True|2025-01-08T12:08:04.4329638+05:30||;True|2025-01-08T11:44:04.3913804+05:30||;True|2025-01-08T11:15:44.4489948+05:30||;True|2025-01-07T18:43:23.7150545+05:30||;True|2025-01-07T18:29:47.0582381+05:30||;True|2025-01-07T17:55:51.5368060+05:30||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,93 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\assets\\index-BAsllVoR.css",
+      "PackagePath": "staticwebassets\\dist\\assets\\index-BAsllVoR.css"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\assets\\index-BsSUUTca.js",
+      "PackagePath": "staticwebassets\\dist\\assets\\index-BsSUUTca.js"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\bottombar.png",
+      "PackagePath": "staticwebassets\\dist\\bottombar.png"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\chat.gif",
+      "PackagePath": "staticwebassets\\dist\\chat.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\create-meeting.gif",
+      "PackagePath": "staticwebassets\\dist\\create-meeting.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\desktop.ini",
+      "PackagePath": "staticwebassets\\dist\\desktop.ini"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\index.html",
+      "PackagePath": "staticwebassets\\dist\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\join_meeting.gif",
+      "PackagePath": "staticwebassets\\dist\\join_meeting.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\leave-screen.png",
+      "PackagePath": "staticwebassets\\dist\\leave-screen.png"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\participant_list.gif",
+      "PackagePath": "staticwebassets\\dist\\participant_list.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\participant_view.png",
+      "PackagePath": "staticwebassets\\dist\\participant_view.png"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\prebuilt.jpg",
+      "PackagePath": "staticwebassets\\dist\\prebuilt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\precall-screen.gif",
+      "PackagePath": "staticwebassets\\dist\\precall-screen.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\presenter-view.gif",
+      "PackagePath": "staticwebassets\\dist\\presenter-view.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\vite.svg",
+      "PackagePath": "staticwebassets\\dist\\vite.svg"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\dist\\waiting-screen.gif",
+      "PackagePath": "staticwebassets\\dist\\waiting-screen.gif"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Id": "C:\\Users\\aneea\\source\\repos\\ClassroomApi\\ClassroomAPI\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.min.js"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.ClassroomAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.ClassroomAPI.props",
+      "PackagePath": "build\\ClassroomAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ClassroomAPI.props",
+      "PackagePath": "buildMultiTargeting\\ClassroomAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.ClassroomAPI.props",
+      "PackagePath": "buildTransitive\\ClassroomAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
