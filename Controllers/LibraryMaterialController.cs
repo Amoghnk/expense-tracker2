@@ -53,8 +53,40 @@ namespace ClassroomAPI.Controllers
             return Ok(libraryMaterials);
         }
 
+        //Get only upload pending library materials
+        [HttpGet("getUploadPendingMaterials")]
+        public async Task<IActionResult> GetUploadPendingMaterials()
+        {
+            var userId = GetCurrentUserID();
+            if (userId == null)
+                return Unauthorized("Please login");
+
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound("User not found!");
+
+            if (user.Role != Roles.Admin)
+                return Unauthorized("You're not authorized!");
+
+            var uploadPendingMaterials = await _context.LibraryMaterials
+                .Where(lm => lm.AcceptedOrRejected == string.Empty)
+                .Select(lm => new
+                {
+                    lm.LibraryMaterialUploadId,
+                    lm.LibraryMaterialUploadName,
+                    lm.LibraryMaterialUploadUrl,
+                    lm.UploaderId,
+                    lm.AcceptedOrRejected,
+                    uploaderName = lm.Uploader.FullName,
+                    uploaderUserName = lm.Uploader.UserName
+                })
+                .ToListAsync();
+
+            return Ok(uploadPendingMaterials);
+        }
+
         //Endpoint to get a specific library material
-        [HttpGet("{libraryMaterialId}")]
+        [HttpGet("{libraryMaterialId}/getMaterialById")]
         public async Task<IActionResult> GetMaterial(Guid libraryMaterialId)
         {
             var userId = GetCurrentUserID();
@@ -88,7 +120,7 @@ namespace ClassroomAPI.Controllers
         }
 
         //Endpoint to get library-materials uploaded by a specific user
-        [HttpGet("{uploaderId}")]
+        [HttpGet("{uploaderId}/getMaterialByUser")]
         public async Task<IActionResult> GetMaterialsByUser(string uploaderId)
         {
             var userId = GetCurrentUserID();

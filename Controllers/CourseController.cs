@@ -342,6 +342,34 @@ namespace ClassroomAPI.Controllers
             return Ok(course.CourseName +" is deleted!");
         }
 
+        //Leave course
+        [HttpPost("{courseId}/leaveCourse")]
+        public async Task <IActionResult> LeaveCourse(Guid courseId)
+        {
+            var userId = GetCurrentUserId();
+            if (userId == null)
+                return Unauthorized("Please login");
+
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound("User not found!");
+
+            var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseId == courseId);
+            if (course == null)
+                return NotFound("Course not found!");
+
+            if (course.AdminId == userId)
+                return BadRequest("You're the instructor of the course, you can't leave");
+
+            var courseMember = await _context.CourseMembers.FirstOrDefaultAsync(cm => cm.UserId == userId);
+            if(courseMember == null)
+                return BadRequest("You're not enrolled in this course!");
+
+            _context.CourseMembers.Remove(courseMember);
+            await _context.SaveChangesAsync();
+
+            return Ok("You have left the course!");
+        }
 
         //Get current user's Id
         private string GetCurrentUserId()

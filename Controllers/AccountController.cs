@@ -112,6 +112,28 @@ namespace ClassroomAPI.Controllers
             return Ok(user);
         }
 
+        //Edit profile
+        [Authorize]
+        [HttpPost("editProfile")]
+        public async Task<IActionResult> EditProfile([FromBody] RegisterModel model)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+                return Unauthorized("Please login");
+
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound("User not found!");
+
+            if(model.userName != string.Empty)
+                user.UserName = model.userName;
+            if(model.phoneNumber != string.Empty)
+                user.PhoneNumber = model.phoneNumber;
+
+            await _context.SaveChangesAsync();
+            return Ok(user);
+        }
+
         //Register a new admin
         [Authorize(Roles = "Admin")]
         [HttpPost("RegisterAdmin")]

@@ -2,8 +2,10 @@
 appsettings.*.json
 
 *certificates
-*bin
 *migrations
-*obj
 *Properties
 *wwwroot
+
+.vs/
+bin/
+obj/
