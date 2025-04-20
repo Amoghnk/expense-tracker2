@@ -22,7 +22,7 @@ namespace ClassroomAPI.Controllers
             _fileService = fileService;
         }
 
-        //Endpoint to get all library-materials
+        //Endpoint to get all library-materials (Only accepted)
         [HttpGet]
         public async Task<IActionResult> GetAllLibraryMaterials()
         {
@@ -40,6 +40,7 @@ namespace ClassroomAPI.Controllers
             }
 
             var libraryMaterials = await _context.LibraryMaterials
+                .Where(lm => lm.AcceptedOrRejected == "Accepted")
                 .Select(lm => new
                 {
                     lm.LibraryMaterialUploadId,
@@ -230,7 +231,7 @@ namespace ClassroomAPI.Controllers
                 LibraryMaterialUploadName = libraryMaterial.LibraryMaterialUploadName,
                 LibraryMaterialUploadUrl = libraryMaterial.LibraryMaterialUploadUrl,
                 UploaderId = libraryMaterial.UploaderId,
-                Uploader = libraryMaterial.Uploader.FullName ?? ""
+                Uploader = libraryMaterial.Uploader?.FullName ?? ""
             };
 
             return Ok(returnLibraryMaterial);
