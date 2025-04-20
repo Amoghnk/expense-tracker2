@@ -344,7 +344,7 @@ namespace ClassroomAPI.Controllers
 
         //Leave course
         [HttpPost("{courseId}/leaveCourse")]
-        public async Task <IActionResult> LeaveCourse(Guid courseId)
+        public async Task<IActionResult> LeaveCourse(Guid courseId)
         {
             var userId = GetCurrentUserId();
             if (userId == null)
@@ -361,7 +361,7 @@ namespace ClassroomAPI.Controllers
             if (course.AdminId == userId)
                 return BadRequest("You're the instructor of the course, you can't leave");
 
-            var courseMember = await _context.CourseMembers.FirstOrDefaultAsync(cm => cm.UserId == userId);
+            var courseMember = await _context.CourseMembers.FirstOrDefaultAsync(cm => cm.UserId == userId && cm.CourseId == courseId);
             if(courseMember == null)
                 return BadRequest("You're not enrolled in this course!");
 
