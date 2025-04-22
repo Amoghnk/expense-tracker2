@@ -114,8 +114,8 @@ namespace ClassroomAPI.Controllers
 
         //Edit profile
         [Authorize]
-        [HttpPost("editProfile")]
-        public async Task<IActionResult> EditProfile([FromBody] RegisterModel model)
+        [HttpPut("editProfile")]
+        public async Task<IActionResult> EditProfile([FromBody] EditProfileModel model)
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null)
@@ -232,5 +232,13 @@ namespace ClassroomAPI.Controllers
     {
         public string userName { get; set; } = string.Empty;
         public string password { get; set; } = string.Empty;
+    }
+
+    public class EditProfileModel
+    {
+        public string userName { get; set; } = string.Empty;
+        public string fullName { get; set; } = string.Empty;
+        public string phoneNumber { get; set; } = string.Empty;
+
     }
 }
