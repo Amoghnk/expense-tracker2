@@ -498,6 +498,31 @@ namespace ClassroomAPI.Migrations
                     b.ToTable("QuizResponses");
                 });
 
+            modelBuilder.Entity("ClassroomAPI.Models.Recommendation", b =>
+                {
+                    b.Property<Guid>("RecommendationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("MaterialId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("RecommendationId");
+
+                    b.HasIndex("MaterialId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Recommendations");
+                });
+
             modelBuilder.Entity("ClassroomAPI.Models.Report", b =>
                 {
                     b.Property<Guid>("ReportId")
@@ -857,6 +882,25 @@ namespace ClassroomAPI.Migrations
                         .IsRequired();
 
                     b.Navigation("Quiz");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ClassroomAPI.Models.Recommendation", b =>
+                {
+                    b.HasOne("ClassroomAPI.Models.Material", "Material")
+                        .WithMany()
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ClassroomAPI.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
 
                     b.Navigation("User");
                 });

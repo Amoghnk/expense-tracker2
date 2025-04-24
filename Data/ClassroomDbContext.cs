@@ -7,8 +7,8 @@ namespace ClassroomAPI.Data
 {
     public class ClassroomDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ClassroomDbContext(DbContextOptions<ClassroomDbContext> options) : base(options) 
-        { 
+        public ClassroomDbContext(DbContextOptions<ClassroomDbContext> options) : base(options)
+        {
         }
 
         public DbSet<Course> Courses { get; set; }
@@ -25,13 +25,13 @@ namespace ClassroomAPI.Data
         public DbSet<Report> Reports { get; set; }
         public DbSet<Participant> Participants { get; set; }
         public DbSet<Meeting> Meetings { get; set; }
-
         public DbSet<LibraryMaterialUpload> LibraryMaterials { get; set; }
+        
+        public DbSet<Recommendation> Recommendations { get; set; } // ✅ Added
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
 
             builder.Entity<Course>()
                 .HasOne(c => c.GroupAdmin)
@@ -157,6 +157,19 @@ namespace ClassroomAPI.Data
                 .HasOne(lm => lm.Uploader)
                 .WithMany(u => u.LibraryMaterialsUploader)
                 .HasForeignKey(lm => lm.UploaderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // ✅ Added Recommendation relationships
+            builder.Entity<Recommendation>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Recommendation>()
+                .HasOne(r => r.Material)
+                .WithMany()
+                .HasForeignKey(r => r.MaterialId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
